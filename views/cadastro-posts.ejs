@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('partials/head.ejs') %>
+</head>
+
+<body>
+  <%- include('partials/header.ejs') %>
+
+  <section class="container">
+    <%- include('partials/navbar.ejs') %>
+
+    <article class="content">
+      <h1>Cadastro de Post</h1>
+
+      <% if (cadastrado) { %>
+      Cadastro realizado com sucesso<br /><br />
+      <% } %>
+
+      <form action="/salvar-post" method="post">
+        <table border="0">
+          <tr>
+            <td><label>Título</label></td>
+            <td><input name="title" type="text" placeholder="Digite o Título" size="55"></td>
+          </tr>
+          <tr>
+            <td><label>Texto</label></td>
+            <td><textarea name="text" rows="5" style="width:400px"></textarea></td>
+          </tr>
+          <tr>
+            <td><label>Estrelas</label></td>
+            <td><input name="stars" type="number" min="0" max="5" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><button type="submit">Cadastro</button></td>
+          </tr>
+        </table>
+      </form>
+    </article>
+  </section>
+
+  <%- include('partials/footer.ejs') %>
+  <%- include('partials/foot.ejs') %>
+</body>
+
+</html>
